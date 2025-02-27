@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UNIT CONVERSION PAGE</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #080C1F;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding-top: 60px; 
+        }
+        .w3-top {
+            width: calc(100% - 20px);
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .w3-bar {
+            background-color: #0A1F44 !important;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: left;
+        }
+        .w3-bar-item {
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .w3-bar-item:hover {
+            background-color: #6A5ACD;
+            color: white;
+        }
+        .spacer {
+            height: 70px;
+        }
+        .container {
+            background-color: #1C1F2B;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px #6495ED;
+            width: 320px;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #2D2D2D;
+            color: white;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #6A5ACD;
+            color: white;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #4A3BA3;
+        }
+        #clearBtn {
+            width: 50%;
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-card">
+            <a href="tools.html" class="w3-bar-item w3-button w3-padding-large">TOOL</a>
+            <p style="color: #B3A9C9; margin: 0; padding: 16px;">UNIT CONVERSION CALCULATOR</p>
+        </div>
+    </div>    
+
+    <div class="spacer"></div>
+
+    <div class="container">
+        <h1 style="color: #6495ED;"></i> UNIT CONVERSION</h1>
+        <hr style="width: 50px; border: 5px solid #6495ED; border-radius: 5px; margin: auto;">
+        <br>
+        <input type="number" id="num1" placeholder="Enter Number">
+        
+        <div class="button-grid">
+            <button onclick="calculate('cmToM')">CM to M</button>
+            <button onclick="calculate('mToCm')">M to CM</button>
+            <button onclick="calculate('mToKm')">M to KM</button>
+            <button onclick="calculate('kmToM')">KM to M</button>
+        </div>
+
+        <p id="result"></p>
+        <button id="clearBtn" onclick="clearField()">Clear</button>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let resultField = document.getElementById("result");
+
+            if (isNaN(num1)) {
+                resultField.innerText = "Enter a valid number!";
+                return;
+            }
+
+            let result;
+            if (operation === 'cmToM') { 
+                result = num1 / 100; 
+                resultField.innerText = `${num1} CM = ${result} M`;
+            }
+            else if (operation === 'mToCm') { 
+                result = num1 * 100; 
+                resultField.innerText = `${num1} M = ${result} CM`;
+            }
+            else if (operation === 'mToKm') { 
+                result = num1 / 1000; 
+                resultField.innerText = `${num1} M = ${result} KM`;
+            }
+            else if (operation === 'kmToM') { 
+                result = num1 * 1000; 
+                resultField.innerText = `${num1} KM = ${result} M`;
+            }
+        }
+
+        function clearField() {
+            document.getElementById("num1").value = "";
+            document.getElementById("result").innerText = "";
+        }
+    </script>
+</body>
+</html>

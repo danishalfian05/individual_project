@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIMPLE CALCULATOR PAGE</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .w3-bar {
+            background-color: #0A1F44 !important;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: left;
+        }
+        .w3-bar-item {
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .w3-bar-item:hover {
+            background-color: #6A5ACD;
+            color: white;
+        }
+        body { 
+            font-family: 'Lato', sans-serif;
+            background-color: #080C1F; 
+            color: white;
+            text-align: center; 
+            margin: 0;
+            padding-top: 60px; 
+        } 
+        .w3-top {
+            width: calc(100% - 20px);
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .spacer {
+            height: 70px; 
+        }
+        .container {
+            background-color: #1C1F2B; 
+            padding: 20px;
+            border-radius: 70px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px #6495ED;
+        }
+        input { 
+            width: 200px; 
+            padding: 10px; 
+            margin: 5px; 
+            border: 1px solid #1C1F2B;
+            border-radius: 5px; 
+            font-size: 16px; 
+            background-color: #2D2D2D; 
+            color: white;
+        } 
+        button { 
+            width: 50px; 
+            padding: 10px; 
+            margin: 5px; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 18px; 
+            cursor: pointer; 
+            background-color: #6A5ACD; 
+            color: white; 
+        } 
+        button:hover { background-color: #6495ED; } 
+        #clearBtn {
+            width: 50%;
+            background-color: firebrick;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-card">
+            <a href="tools.html" class="w3-bar-item w3-button w3-padding-large">TOOL</a>
+            <p style="color: #B3A9C9; margin: 0; padding: 16px;">CALCULATOR</p>
+        </div>
+    </div>    
+
+    <div class="spacer"></div>
+
+    <div class="container">
+        <h1 style="color: #6495ED;">SIMPLE CALCULATOR</h1>
+        <hr style="width: 50px; border: 5px solid #6495ED; border-radius: 5px; margin: auto;">
+        <br>
+        <input type="number" id="num1" placeholder="Enter First Number">
+        <input type="number" id="num2" placeholder="Enter Second Number"><br><br>
+
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">×</button>
+        <button onclick="calculate('/')">÷</button><br><br>
+
+        <label>Result:</label><br>
+        <input type="text" id="result" readonly><br><br>
+
+        <button id="clearBtn" onclick="clearField()">Clear</button>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let resultField = document.getElementById("result");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                resultField.value = "Enter valid numbers!";
+                return;
+            }
+
+            let result;
+            switch (operation) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/':
+                    if (num2 === 0) {
+                        resultField.value = "Cannot divide by zero!";
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+
+            resultField.value = result;
+        }
+
+        function clearField() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
+</body>
+</html>

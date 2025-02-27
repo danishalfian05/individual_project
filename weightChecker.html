@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI PAGE</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <style>
+        .w3-bar {
+            background-color: #0A1F44 !important;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: left;
+        }
+        .w3-bar-item {
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .w3-bar-item:hover {
+            background-color: #6A5ACD;
+            color: white;
+        }
+        body { 
+            font-family: 'Lato', sans-serif;
+            background-color: #080C1F; 
+            color: white;
+            text-align: center; 
+            margin: 0;
+            padding-top: 60px; 
+        } 
+        .w3-top {
+            width: calc(100% - 20px);
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .spacer {
+            height: 70px; 
+        }
+        .container {
+            background-color: #1C1F2B; 
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px #6495ED;
+        }
+        input { 
+            width: 200px; 
+            padding: 10px; 
+            margin: 5px; 
+            border: 1px solid #1C1F2B;
+            border-radius: 5px; 
+            font-size: 16px; 
+            background-color: #2D2D2D; 
+            color: white;
+        } 
+        button { 
+            padding: 10px 15px; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            background-color: #6A5ACD; 
+            color: white; 
+        } 
+        button:hover { background-color: #6495ED; } 
+        .wasted { background-color: blue; color: white; padding: 5px; }
+        .normal { background-color: green; color: white; padding: 5px; }
+        .overweight { background-color: #E6C368; padding: 5px; }
+        .obese { background-color: orange; padding: 5px; }
+        .extremeObese { background-color: red; color: white; padding: 5px; }
+    </style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-card">
+            <a href="tools.html" class="w3-bar-item w3-button w3-padding-large">TOOL</a>
+            <p style="color: #B3A9C9; margin: 0; padding: 16px;">BMI CALCULATOR</p>
+        </div>
+    </div>    
+    
+    <div class="spacer"></div>
+
+    <div class="container">
+        <h1 style="color: #6495ED;">BMI CALCULATOR</h1>
+        <hr style="width: 50px; border: 5px solid #6495ED; border-radius: 5px; margin: auto;">
+        <br>
+        <label for="weight">Weight (kg):</label><br>
+        <input type="number" id="weight" placeholder="Enter Weight"><br><br>
+
+        <label for="height">Height (m):</label><br>
+        <input type="number" id="height" placeholder="Enter Height"><br><br>
+
+        <button onclick="calculateBMI()">Calculate</button><br><br>
+
+        <p id="result"></p>
+        <img id="displayImage" width="400" height="200">
+    </div>
+
+    <script>
+        function calculateBMI() {
+            let weight = parseFloat(document.getElementById("weight").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let result = document.getElementById("result");
+            let displayImage = document.getElementById("displayImage");
+
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                result.innerText = "Please enter valid weight and height!";
+                result.className = "";
+                displayImage.src = "";
+                return;
+            }
+
+            let bmi = weight / (height * height);
+
+            if (bmi < 18.5) {
+                result.innerText = "Underweight";
+                result.className = "wasted";
+                displayImage.src = "underweight.jpg";
+            } else if (bmi < 24.9) {
+                result.innerText = "Normal";
+                result.className = "normal";
+                displayImage.src = "normal.jpg";
+            } else if (bmi < 29.9) {
+                result.innerText = "Overweight";
+                result.className = "overweight";
+                displayImage.src = "overweight.jpg";
+            } else if (bmi < 39.9) {
+                result.innerText = "Obese";
+                result.className = "obese";
+                displayImage.src = "obese.jpg";
+            } else {
+                result.innerText = "Extreme Obese";
+                result.className = "extremeObese";
+                displayImage.src = "extremeObese.jpg";
+            }
+        }
+    </script>
+</body>
+</html>

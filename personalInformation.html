@@ -1,0 +1,221 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAL PAGE</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+        .w3-row-padding img {margin-bottom: 12px}
+        .w3-sidebar {
+            width: 120px;
+            background: #222;
+            position: fixed;
+            top: 130px; 
+            bottom: 0;
+            z-index: 1; 
+        }
+        #main {margin-left: 120px}
+        @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+        .w3-bar {
+            background-color: #0A1F44 !important;
+            border-radius: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: left;
+        }
+        .w3-bar-item {
+            border-radius: 5px;
+            margin: 5px;
+        }
+        body {
+            background-color: #080C1F;
+            color: white;
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding-top: 60px;
+        }
+        .w3-top {
+            width: calc(100% - 20px);
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .spacer {
+            height: 70px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .welcome-text {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .description {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        .header {
+            padding: 100px 16px;
+            background: linear-gradient(to right, #2D2D2D, #1C1F2B);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 60px;
+            color: #6495ED;
+        }
+        .header h2 {
+            font-size: 45px;
+            color: #6A5ACD;
+        }
+        .header p {
+            font-size: 24px;
+            color: #B3A9C9;
+        }
+        .social-icons a {
+            font-size: 30px; 
+            margin: 10px;
+            color: white; 
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: yellow; /* Change color on hover */
+        }
+
+        .contact-info {
+            margin: 50px 0;
+        }
+
+        .contact-info p {
+            font-size: 20px;
+        }
+
+        .photo-layout {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .photo-layout img {
+            width: 30%;
+            border-radius: 10px;
+        }
+        .center-hr {
+            width: 200px;
+            margin: 0 auto;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="w3-black">
+    <div class="w3-top">
+        <div class="w3-bar w3-card">
+            <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <p style="color: #B3A9C9;" class="w3-bar-item w3-padding-large">PERSONAL</p>
+            <a href="tools.html" class="w3-bar-item w3-button w3-padding-large">TOOL</a>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+        <img src="archer2.jpg" style="width:100%">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+            <i class="fa fa-home w3-xxlarge"></i>
+            <p>HOME</p>
+        </a>
+        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-user w3-xxlarge"></i>
+            <p>ABOUT</p>
+        </a>
+        <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-eye w3-xxlarge"></i>
+            <p>PHOTOS</p>
+        </a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+            <i class="fa fa-envelope w3-xxlarge"></i>
+            <p>CONTACT</p>
+        </a>
+    </nav>
+
+    <div class="w3-padding-large" id="main">
+        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+            <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Muhammad Danish.</h1>
+            <p>Software Developer.</p>
+            <img src="archer2.jpg" alt="boy" class="w3-image" width="992" height="1108">
+        </header>
+
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+            <h2 class="w3-text-light-grey">About Me</h2>
+            <hr style="width:200px" class="w3-opacity">
+            <p>My name is Muhammad Danish bin Muhammad Alfian, but you can call me Danish Alfian. I am 20 years old and was born in Johor Bahru. Currently, I am a Year 2, Semester 2 Diploma student in Computer Science at Universiti Teknologi Malaysia. I have a wide range of hobbies, but my main interests are cooking, playing archery, and practicing judo.</p>
+
+            <h3 class="w3-padding-16 w3-text-light-grey">My Hobby Skills</h3>
+            <p class="w3-wide">Judo</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+            </div>
+            <p class="w3-wide">Archery</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:90%"></div>
+            </div>
+            <p class="w3-wide">Cooking</p>
+            <div class="w3-white">
+                <div class="w3-dark-grey" style="height:28px;width:95%"></div>
+            </div><br>
+
+            <div>
+                <a href="cv.html">
+                    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+                        <i class="fa fa-download"></i> View CV
+                    </button>
+                </a>
+                <a href="CV - MUHAMMAD DANISH .pdf" download="CV.pdf">
+                    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+                        <i class="fa fa-download"></i> Download CV
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="photos"></div>
+            <h2 class="w3-text-light-grey">Photos</h2>
+            <hr style="width:200px" class="w3-opacity center-hr">
+            <div class="photo-layout">
+                <img src="My Picture 1.jpg" alt="Photo 1">
+                <img src="My Picture 3.jpg" alt="Photo 2">
+                <img src="My Picture 4.jpg" alt="Photo 3">
+            </div>
+        </div>
+
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="contact"></div>
+            <div class="contact-info w3-padding-32">
+                <h2 class="w3-text-light-grey">Contact Me</h2>
+                <hr style="width:200px" class="w3-opacity center-hr">
+                <p><i class="fa fa-envelope"></i> Email: <a href="mailto:danishalfian200305@gmail.com">danishalfian200305@gmail.com</a></p>
+                <p><i class="fa fa-phone"></i> Phone: +60 17-756 2170</p>
+            </div>
+
+            <footer class="w3-container w3-teal w3-center w3-margin-top">
+                <p>Find me on social media.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/danishalfian05?igsh=YzQ5cGRweTIyeXUy" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/muhammad-danish-muhammad-alfian-3b64b5306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
